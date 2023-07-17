@@ -7,8 +7,10 @@ const Submenu = () => {
     page: { page, links },
     location,
   } = useGlobalContext();
+
   const container = useRef(null);
   const [columns, setColumns] = useState("col-2");
+
   useEffect(() => {
     setColumns("col-2");
     const submenu = container.current;
@@ -23,6 +25,7 @@ const Submenu = () => {
       setColumns("col-4");
     }
   }, [page, location, links]);
+
   return (
     <aside
       className={`${isSubmenuOpen ? "submenu show" : "submenu"}`}
